@@ -1,0 +1,76 @@
+
+.tiledListItem {
+  cursor: pointer;
+  flex: 1;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #575195;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.09);
+  position: relative;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.tiledListItem > label {
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  height: 176px;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tiledListItem > label > .description {
+  color: #4a4a4a;
+  font-weight: initial;
+  width: 45%;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.tiledListItem.checked > label > .description {
+  color: #fff;
+}
+
+.tiledListItem > label > .icon {
+  margin-top: -12px;
+}
+
+.tiledListItem:focus-within {
+  box-shadow: rgb(97, 39, 158) 0 0 4px 3px;
+}
+
+.tiledListItem:not(.checked):hover {
+  background-color: #e5e5e5;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.tiledListItem.checked::before {
+  content: "\F5E1";
+  line-height: 1;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
+  font-size: 18px;
+  font-family: 'Material Design Icons', serif;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 20px;
+  letter-spacing: 0;
+}
+
+.tiledListItem.checked {
+  background: #575195;
+  color: white;
+}
+
+.tiledListItem input[type=radio]:not(.radio-input) {
+  position: absolute;
+  left: -10000px;
+}
